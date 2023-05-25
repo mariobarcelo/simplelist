@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './TodoList.module.css';
+import TodoItem from '../TodoItem/TodoItem';
 
 function TodoList({ itemsList }) {
 	if (!itemsList) return;
@@ -7,7 +8,7 @@ function TodoList({ itemsList }) {
 	return (
 		<ul>
 			{itemsList.map(({ name, id }) => {
-				return <li key={id}>{name}</li>;
+				return <TodoItem key={id}>{name}</TodoItem>;
 			})}
 		</ul>
 	);
