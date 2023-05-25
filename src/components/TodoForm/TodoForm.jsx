@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './TodoForm.module.css';
 
 function TodoForm({ itemsList, setItemsList }) {
@@ -8,13 +9,19 @@ function TodoForm({ itemsList, setItemsList }) {
 		<form
 			onSubmit={(event) => {
 				event.preventDefault();
-				console.log('inputValue: ', inputValue);
 
-				const nextItemsList = [...itemsList, inputValue];
+				const nextItem = {
+					name: inputValue,
+					id: uuidv4(),
+					done: false,
+				};
+
+				const nextItemsList = [...itemsList, nextItem];
 
 				setItemsList(nextItemsList);
 
 				setInputValue('');
+				console.log('task: ', nextItem);
 			}}>
 			<label htmlFor='taskInput'></label>
 			<input

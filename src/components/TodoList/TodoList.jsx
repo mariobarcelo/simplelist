@@ -6,8 +6,8 @@ function TodoList({ itemsList }) {
 
 	return (
 		<ul>
-			{itemsList.map((item) => {
-				return <li>{item}</li>;
+			{itemsList.map(({ name, id }) => {
+				return <li key={id}>{name}</li>;
 			})}
 		</ul>
 	);
