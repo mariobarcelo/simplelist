@@ -5,7 +5,7 @@ import styles from './App.module.css';
 function App() {
 	return (
 		<div className={styles.wrapper}>
-			<h1>GTDone</h1>
+			<h1>SimpleList</h1>
 			<TodoApp />
 		</div>
 	);
