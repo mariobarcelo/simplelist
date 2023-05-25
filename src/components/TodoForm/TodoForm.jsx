@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from './TodoForm.module.css';
 
-function TodoForm() {
-	const [inputValue, setInputValue] = React.useState('');
+function TodoForm({ itemsList, setItemsList }) {
+	const [inputValue, setInputValue] = React.useState([]);
 
 	return (
 		<form
 			onSubmit={(event) => {
 				event.preventDefault();
 				console.log('inputValue: ', inputValue);
+
+				const nextItemsList = [...itemsList, inputValue];
+
+				setItemsList(nextItemsList);
+
 				setInputValue('');
 			}}>
 			<label htmlFor='taskInput'></label>
