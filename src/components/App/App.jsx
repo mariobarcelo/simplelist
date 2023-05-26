@@ -1,5 +1,4 @@
 import TodoApp from '../TodoApp';
-
 import styles from './App.module.css';
 
 function App() {

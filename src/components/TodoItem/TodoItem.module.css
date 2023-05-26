@@ -1,13 +1,58 @@
 .item {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 2rem;
-	list-style: none;
-	border: 2px solid white;
+	justify-content: space-between;
+	min-height: 55px;
+	gap: 10px;
+	border: 2px solid var(--white-color);
 	border-radius: 8px;
+	padding: 8px 16px;
+	padding-inline-start: 16px;
+	padding-block-start: 8px;
+	padding-block-end: 8px;
+	padding-inline-end: 4px;
 }
 
-.done {
-	text-decoration: line-through;
+li.done {
+	border-color: var(--gray-color);
+}
+
+li.done span {
+	color: var(--gray-color);
+	text-decoration-line: line-through;
+	text-decoration-color: var(--red-color);
+}
+
+li.done button {
+	color: var(--gray-color);
+}
+
+span {
+	font-size: 18px;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
+button {
+	position: relative;
+	min-width: fit-content;
+	background-color: transparent;
+	border: none;
+	/* background-color: transparent;
+	border: none; */
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button::after {
+	--tap-increment: -10px;
+	content: '';
+	position: absolute;
+	top: var(--tap-increment);
+	left: var(--tap-increment);
+	right: var(--tap-increment);
+	bottom: var(--tap-increment);
 }

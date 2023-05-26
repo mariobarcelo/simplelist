@@ -10,7 +10,7 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 		<li
 			ref={liRef}
 			className={
-				done ? `${styles.task} ${styles.done}` : `${styles.task}`
+				done ? `${styles.item} ${styles.done}` : `${styles.item}`
 			}
 			onClick={(event) => {
 				event.stopPropagation();
@@ -30,7 +30,7 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 				console.log('nextItemsList - OnClick', nextItemsList);
 				setItemsList(nextItemsList);
 			}}>
-			{children}
+			<span>{children}</span>
 			<button
 				onClick={(event) => {
 					event.stopPropagation();

@@ -3,7 +3,7 @@ import styles from './TodoList.module.css';
 import TodoItem from '../TodoItem/TodoItem';
 
 function TodoList({ itemsList, setItemsList }) {
-	if (!itemsList || itemsList.length === 0) return;
+	if (itemsList.length === 0) return;
 
 	console.log('itemsList: ', itemsList);
 	return (

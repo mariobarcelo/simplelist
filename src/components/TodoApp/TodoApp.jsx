@@ -8,10 +8,10 @@ function TodoApp() {
 	console.log('itemsList - TodoApp: ', itemsList);
 
 	return (
-		<>
+		<div className={styles.wrapper}>
 			<TodoForm itemsList={itemsList} setItemsList={setItemsList} />
 			<TodoList itemsList={itemsList} setItemsList={setItemsList} />
-		</>
+		</div>
 	);
 }
 

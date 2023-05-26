@@ -1,12 +1,14 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './TodoForm.module.css';
+import VisuallyHidden from '../VisuallyHidden/VisuallyHidden';
 
 function TodoForm({ itemsList, setItemsList }) {
 	const [inputValue, setInputValue] = React.useState([]);
 
 	return (
 		<form
+			className={styles.todoForm}
 			onSubmit={(event) => {
 				event.preventDefault();
 
@@ -23,8 +25,11 @@ function TodoForm({ itemsList, setItemsList }) {
 				setInputValue('');
 				console.log('task: ', nextItem);
 			}}>
-			<label htmlFor='taskInput'></label>
+			<VisuallyHidden>
+				<label htmlFor='taskInput'>Add item input</label>
+			</VisuallyHidden>
 			<input
+				className={styles.todoInput}
 				required
 				id='taskInput'
 				type='text'
@@ -33,7 +38,7 @@ function TodoForm({ itemsList, setItemsList }) {
 					setInputValue(event.target.value);
 				}}
 			/>
-			<button>Add task</button>
+			<button className={styles.submitButton}>Add item</button>
 		</form>
 	);
 }
