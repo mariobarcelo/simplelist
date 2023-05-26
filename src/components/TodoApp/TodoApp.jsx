@@ -5,11 +5,12 @@ import TodoList from '../TodoList/TodoList';
 
 function TodoApp() {
 	const [itemsList, setItemsList] = React.useState([]);
+	console.log('itemsList - TodoApp: ', itemsList);
 
 	return (
 		<>
 			<TodoForm itemsList={itemsList} setItemsList={setItemsList} />
-			<TodoList itemsList={itemsList} />
+			<TodoList itemsList={itemsList} setItemsList={setItemsList} />
 		</>
 	);
 }

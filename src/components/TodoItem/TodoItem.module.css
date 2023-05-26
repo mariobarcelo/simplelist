@@ -7,3 +7,7 @@
 	border: 2px solid white;
 	border-radius: 8px;
 }
+
+.done {
+	text-decoration: line-through;
+}
