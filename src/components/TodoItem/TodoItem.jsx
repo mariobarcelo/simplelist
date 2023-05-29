@@ -28,7 +28,7 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 			<span className={styles.itemName}>{children}</span>
 
 			<button
-				className={styles.submitButton}
+				className={styles.deleteItem}
 				onClick={(event) => {
 					event.stopPropagation();
 					const currentItems = [...itemsList];

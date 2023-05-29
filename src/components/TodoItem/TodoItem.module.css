@@ -17,6 +17,10 @@ li.item {
 	animation: appear 300ms forwards;
 }
 
+li.item:hover {
+	cursor: pointer;
+}
+
 @keyframes appear {
 	from {
 		opacity: 0;
@@ -56,7 +60,7 @@ li.done button {
 	user-select: none; /* Standard syntax */
 }
 
-.submitButton {
+.deleteItem {
 	position: relative;
 	min-width: fit-content;
 	background-color: transparent;
@@ -66,11 +70,11 @@ li.done button {
 	border: none; */
 }
 
-.submitButton:hover {
+.deleteItem:hover {
 	cursor: pointer;
 }
 
-.submitButton::after {
+.deleteItem::after {
 	--tap-increment: -10px;
 	content: '';
 	position: absolute;
