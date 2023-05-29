@@ -30,8 +30,10 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 				console.log('nextItemsList - OnClick', nextItemsList);
 				setItemsList(nextItemsList);
 			}}>
-			<span>{children}</span>
+			<span className={styles.itemName}>{children}</span>
+
 			<button
+				className={styles.submitButton}
 				onClick={(event) => {
 					event.stopPropagation();
 					const currentItems = [...itemsList];

@@ -1,4 +1,4 @@
-.item {
+li.item {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -11,43 +11,66 @@
 	padding-block-start: 8px;
 	padding-block-end: 8px;
 	padding-inline-end: 4px;
+	opacity: 0;
+	transition: border 300ms ease;
+	transform: translateY(-5px);
+	animation: appear 300ms forwards;
+}
+
+@keyframes appear {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+li span,
+li button {
+	transition: all 300ms ease;
 }
 
 li.done {
 	border-color: var(--gray-color);
+	transition: all 200ms ease;
 }
 
 li.done span {
 	color: var(--gray-color);
 	text-decoration-line: line-through;
 	text-decoration-color: var(--red-color);
+	transition: all 200ms ease;
 }
 
 li.done button {
 	color: var(--gray-color);
+	transition: all 200ms ease;
 }
 
-span {
+.itemName {
 	font-size: 18px;
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
 	user-select: none; /* Standard syntax */
 }
 
-button {
+.submitButton {
 	position: relative;
 	min-width: fit-content;
 	background-color: transparent;
 	border: none;
+	color: var(--white-color);
 	/* background-color: transparent;
 	border: none; */
 }
 
-button:hover {
+.submitButton:hover {
 	cursor: pointer;
 }
 
-button::after {
+.submitButton::after {
 	--tap-increment: -10px;
 	content: '';
 	position: absolute;
