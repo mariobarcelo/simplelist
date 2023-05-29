@@ -5,25 +5,29 @@ import VisuallyHidden from '../VisuallyHidden/VisuallyHidden';
 
 function TodoForm({ itemsList, setItemsList }) {
 	const [inputValue, setInputValue] = React.useState([]);
+	const inputRef = React.useRef(null);
+
+	function handleSubmit(event) {
+		event.preventDefault();
+
+		const nextItem = {
+			name: inputValue,
+			id: uuidv4(),
+			done: false,
+		};
+		const nextItemsList = [...itemsList, nextItem];
+		setItemsList(nextItemsList);
+
+		setInputValue('');
+		inputRef.current.focus();
+		console.log('task: ', nextItem);
+	}
 
 	return (
 		<form
 			className={styles.todoForm}
 			onSubmit={(event) => {
-				event.preventDefault();
-
-				const nextItem = {
-					name: inputValue,
-					id: uuidv4(),
-					done: false,
-				};
-
-				const nextItemsList = [...itemsList, nextItem];
-
-				setItemsList(nextItemsList);
-
-				setInputValue('');
-				console.log('task: ', nextItem);
+				handleSubmit(event);
 			}}>
 			<VisuallyHidden>
 				<label htmlFor='taskInput'>Add item input</label>
@@ -31,6 +35,7 @@ function TodoForm({ itemsList, setItemsList }) {
 			<input
 				className={styles.todoInput}
 				required
+				ref={inputRef}
 				id='taskInput'
 				type='text'
 				value={inputValue}
