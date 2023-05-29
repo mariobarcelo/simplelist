@@ -7,6 +7,8 @@ function TodoForm({ itemsList, setItemsList }) {
 	const [inputValue, setInputValue] = React.useState([]);
 	const inputRef = React.useRef(null);
 
+	console.log('------ TodoForm -----');
+
 	function handleSubmit(event) {
 		event.preventDefault();
 
@@ -20,7 +22,6 @@ function TodoForm({ itemsList, setItemsList }) {
 
 		setInputValue('');
 		inputRef.current.focus();
-		console.log('task: ', nextItem);
 	}
 
 	return (

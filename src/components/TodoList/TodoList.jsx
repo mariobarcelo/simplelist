@@ -3,9 +3,10 @@ import styles from './TodoList.module.css';
 import TodoItem from '../TodoItem/TodoItem';
 
 function TodoList({ itemsList, setItemsList }) {
+	console.log('------ TodoList -----');
+
 	if (itemsList.length === 0) return;
 
-	console.log('itemsList: ', itemsList);
 	return (
 		<ul>
 			{itemsList.map(({ name, id, done }) => {

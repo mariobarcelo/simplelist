@@ -15,19 +15,14 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 			onClick={(event) => {
 				event.stopPropagation();
 				const currentItems = [...itemsList];
-				console.log('currentItems - OnClick: ', currentItems);
 				const nextItemsList = currentItems.map((item) => {
-					console.log(item);
 					if (item.id === id) {
-						console.log('item.done BEFORE: ', item.done);
-						console.log(`Hola soy la tarea con nombre ${children}`);
 						const done = !item.done;
 						return { ...item, done };
 					} else {
 						return item;
 					}
 				});
-				console.log('nextItemsList - OnClick', nextItemsList);
 				setItemsList(nextItemsList);
 			}}>
 			<span className={styles.itemName}>{children}</span>
@@ -37,11 +32,9 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 				onClick={(event) => {
 					event.stopPropagation();
 					const currentItems = [...itemsList];
-					// console.log('currentItems: ', currentItems);
 					const nextItemsList = currentItems.filter((item) => {
 						return item.id !== id;
 					});
-					// console.log('nextItemsList: ', nextItemsList);
 
 					setItemsList(nextItemsList);
 				}}>
