@@ -7,8 +7,6 @@ function TodoForm({ itemsList, setItemsList }) {
 	const [inputValue, setInputValue] = React.useState([]);
 	const inputRef = React.useRef(null);
 
-	console.log('------ TodoForm -----');
-
 	function handleSubmit(event) {
 		event.preventDefault();
 

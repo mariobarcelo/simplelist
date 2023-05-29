@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
 function TodoApp() {
 	const [itemsList, setItemsList] = React.useState(() => {
 		const storedItems = JSON.parse(localStorage.getItem('items'));
-		console.log('storedItems', storedItems);
 		if (storedItems) {
 			return storedItems;
 		} else {
@@ -30,8 +29,6 @@ function TodoApp() {
 			];
 		}
 	});
-
-	console.log('itemsList: ', itemsList);
 
 	React.useEffect(() => {
 		const storedItems = JSON.parse(localStorage.getItem('items'));
