@@ -13,14 +13,19 @@ function TodoApp() {
 		} else {
 			return [
 				{
-					name: 'Create tasks like me!',
+					name: 'Create items like this!',
 					id: uuidv4(),
 					done: false,
 				},
 				{
-					name: "I'm a completed task.",
+					name: 'This is a marked item. Click it to unmark it.',
 					id: uuidv4(),
 					done: true,
+				},
+				{
+					name: 'Touch the X to delete an item.',
+					id: uuidv4(),
+					done: false,
 				},
 			];
 		}
