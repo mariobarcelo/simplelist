@@ -1,7 +1,4 @@
-li.item {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+button.item {
 	min-height: 55px;
 	gap: 10px;
 	border: 2px solid var(--white-color);
@@ -17,7 +14,13 @@ li.item {
 	animation: appear 300ms forwards;
 }
 
-li.item:hover {
+button.item li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+button.item:hover {
 	cursor: pointer;
 }
 
@@ -31,24 +34,28 @@ li.item:hover {
 	}
 }
 
-li span,
-li button {
+button.item span {
+	text-align: left;
+}
+
+button span,
+button button {
 	transition: all 300ms ease;
 }
 
-li.done {
+button.done {
 	border-color: var(--gray-color);
 	transition: all 200ms ease;
 }
 
-li.done span {
+button.done span {
 	color: var(--gray-color);
 	text-decoration-line: line-through;
 	text-decoration-color: var(--red-color);
 	transition: all 200ms ease;
 }
 
-li.done button {
+button.done button {
 	color: var(--gray-color);
 	transition: all 200ms ease;
 }
