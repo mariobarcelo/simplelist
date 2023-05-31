@@ -15,6 +15,7 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 			aria-label={
 				done ? `${children} Crossed out item` : `${children}`
 			}
+			aria-live='polite'
 			onClick={(event) => {
 				event.stopPropagation();
 				const currentItems = [...itemsList];
@@ -34,7 +35,7 @@ function TodoItem({ children, id, done, itemsList, setItemsList }) {
 				</span>
 
 				<button
-					aria-label='Delete item'
+					aria-label={`Delete ${children} item`}
 					className={styles.deleteItem}
 					onClick={(event) => {
 						event.stopPropagation();
