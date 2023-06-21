@@ -1,5 +1,5 @@
 {
-	"name": "simplelist",
+	"name": "minimalist",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -14,8 +14,7 @@
 		"new-component": "^5.0.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-feather": "^2.0.10",
-		"uuid": "^9.0.0"
+		"react-feather": "^2.0.10"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.28",
