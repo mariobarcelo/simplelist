@@ -5,8 +5,8 @@
 	--font-size-h2: clamp(1.56rem, 1.25vw + 1.25rem, 2.25rem);
 	--font-size-h1: clamp(1.95rem, 2.59vw + 1.31rem, 3.38rem);
 
-	--primary-color: hsl(212deg 3.68% 13.84%);
-	--secondary-color: hsl(0deg 100% 85.3%);
+	--primary-color: hsl(212, 15%, 22%);
+	--secondary-color: hsl(49, 94%, 63%);
 	--gray-color: hsl(0, 0%, 55%);
 	--white-color: hsl(0, 0%, 94%);
 	--red-color: hsl(0, 88%, 64%);

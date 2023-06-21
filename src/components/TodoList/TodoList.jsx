@@ -3,15 +3,15 @@ import styles from './TodoList.module.css';
 import TodoItem from '../TodoItem/TodoItem';
 
 function TodoList({ itemsList, setItemsList }) {
-	if (itemsList?.length === 0 || !itemsList) return;
+	if (itemsList.length === 0) return;
 
 	return (
 		<ul>
-			{itemsList.map(({ name, _id, done }) => {
+			{itemsList.map(({ name, id, done }) => {
 				return (
 					<TodoItem
-						key={_id}
-						id={_id}
+						key={id}
+						id={id}
 						done={done}
 						itemsList={itemsList}
 						setItemsList={setItemsList}>

@@ -1,45 +1,25 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './TodoForm.module.css';
 import VisuallyHidden from '../VisuallyHidden/VisuallyHidden';
-import { DATABASE_URL } from '../../constants';
 
 function TodoForm({ itemsList, setItemsList }) {
 	const [inputValue, setInputValue] = React.useState([]);
 	const inputRef = React.useRef(null);
 
-	async function handleSubmit(event) {
+	function handleSubmit(event) {
 		event.preventDefault();
 
-		const item = {
+		const nextItem = {
 			name: inputValue,
+			id: uuidv4(),
 			done: false,
 		};
-
-		const nextItem = await postData(item);
-
 		const nextItemsList = [...itemsList, nextItem];
-
 		setItemsList(nextItemsList);
 
 		setInputValue('');
 		inputRef.current.focus();
-	}
-
-	async function postData({ name, done }) {
-		const response = await fetch(DATABASE_URL, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify([{ name, done }]),
-		});
-
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
-		}
-
-		const data = await response.json();
-		return data[0];
 	}
 
 	return (
